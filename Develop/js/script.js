@@ -1,12 +1,13 @@
 var userIP = "";
 
+//gets the users ip then passes that data the findLocation function
 var getLocation = function(){
     $.getJSON("https://api.ipify.org/?format=json", function(e) {
-        var userIP = e.ip;
-        return userIP;
+        userIP = e.ip;
     }).then(findLocation(userIP));
 };
 
+//uses ip ddress to get physical location data
 var findLocation = function(ip){
     var apiURL = "http://ip-api.com/json/" + ip;
     
