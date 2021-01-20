@@ -20,6 +20,7 @@ var findLocation = function(ip){
         }
         else{
             //if api fecth fails, alert the user
+            alert("Error: " + response.statusText)
         };
     });
 };
