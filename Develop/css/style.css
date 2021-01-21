@@ -1,0 +1,10 @@
+#camp {
+    color: sienna;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+#hero {
+    /* background-image: linear-gradient(to bottom right, red, yellow); */
+    background-image: linear-gradient(to bottom right, darkgreen, sienna);
+}
