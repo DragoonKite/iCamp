@@ -1,4 +1,5 @@
 var userIP = "";
+//NPS api key - URIxdIswkdTl4euYJO1wnZGabiusT8WBy7v5SX5k
 
 //gets the users ip then passes that data the findLocation function
 var getLocation = function(){
@@ -24,5 +25,5 @@ var findLocation = function(ip){
         };
     });
 };
-
+console.log(dayjs());
 getLocation();
