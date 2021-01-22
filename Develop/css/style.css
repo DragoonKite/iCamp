@@ -7,4 +7,30 @@
 #hero {
     /* background-image: linear-gradient(to bottom right, red, yellow); */
     background-image: linear-gradient(to bottom right, darkgreen, sienna);
+    /* margin-bottom: 20px; */
+}
+
+.sidebar {
+    background-color: tan;
+    border-radius: 0%;
+}
+
+.submit {
+    width: 100%;
+    padding: 10px 0;
+    border: solid 2px black;
+    font-size: large;
+    text-align: center;
+}
+
+.btn1 {
+    width: 100%;
+    padding-top: 5px;
+    font-weight: bold;
+    border: solid 2px black;
+    border-top: none;
+}
+
+.list li:hover {
+    font-weight: bold;
 }
