@@ -6,7 +6,7 @@
 
 #hero {
     /* background-image: linear-gradient(to bottom right, red, yellow); */
-    background-image: linear-gradient(to bottom right, darkgreen, sienna);
+    background-image: linear-gradient(to bottom right, sienna, darkgreen, navy);
     /* margin-bottom: 20px; */
 }
 
@@ -47,4 +47,14 @@
 
 .btn1{
     min-height: 30px;
+}
+
+.sienna {
+
+    border-radius: 0;
+    background-image:url(https://think.kera.org/wp-content/uploads/2020/05/shutterstock_750703924-800x500.jpg) 
+}
+
+#parkList {
+    display: none;
 }
