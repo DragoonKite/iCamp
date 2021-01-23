@@ -52,7 +52,9 @@
 .sienna {
 
     border-radius: 0;
-    background-image:url(https://think.kera.org/wp-content/uploads/2020/05/shutterstock_750703924-800x500.jpg) 
+    background-image:url(https://think.kera.org/wp-content/uploads/2020/05/shutterstock_750703924-800x500.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #parkList {
