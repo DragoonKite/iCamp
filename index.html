@@ -1,46 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./Develop/css/style.css"/>
-    <title>iCamp</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css"
+          integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA=="
+          crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous" />
+     <link rel="stylesheet" href="./Develop/css/style.css" />
+     <title>iCamp</title>
 </head>
+
 <body>
-    <hero class="hero is-primary">
-    <div class="hero-body" id="hero">
-        <div class="container">
-        <h1 class="title">
-            i<span id="camp">Camp</span>
-        </h1>
-        <h2 class="subtitle">
-            National Parks
-        </h2>
-        </div>
-    </div>
-    </hero>
-    
-<div class="tile is-ancestor">
-  <div class="tile is-4 is-vertical is-parent">
-    <div class="tile is-child box sidebar">
-      <input placeholder="Search by State" class="submit"></input>
-      <button type="submit" class="btn1">
-      Select the state you'd like to visit!
-      </button>
-    </div>
-    <div class="tile is-child box sidebar">
-      <p class="title">National Parks </p>
-        <ul class="list">
-          <li>Grand Canyon National Park</li>
-          <li>Rocky Mountain National Park</li>
-          <li>Great Smoky Mountain National Park</li>
-        </ul>
-    </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script src="Develop/js/script.js"></script>
+     <hero class="hero is-primary">
+          <div class="hero-body" id="hero">
+               <div class="container">
+                    <h1 class="title">
+                         i<span id="camp">Camp</span>
+                    </h1>
+                    <h2 class="subtitle">
+                         National Parks
+                    </h2>
+               </div>
+          </div>
+     </hero>
+
+     <div class="tile is-ancestor">
+          <div class="tile is-half is-vertical is-parent column">
+               <div class="tile is-child  box sidebar">
+                    <input placeholder="Search by State" class="submit"></input>
+                    <button type="submit" class="btn1">
+                         Select the state you'd like to visit!
+                    </button>
+
+                    <div class="tile is-child box sidebar">
+                         <p class="title">National Parks </p>
+                         <ul class="list">
+                              <li>Grand Canyon National Park</li>
+                              <li>Rocky Mountain National Park</li>
+                              <li>Great Smoky Mountain National Park</li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+
+          <div class="tile is-parent">
+               <article class="tile is-half is-child box sidebar">
+                    <p class="title">Select your date</p>
+                    <input type="date">
+                    <div>
+                         <p class="title">Weather stuff here?</p>
+                    </div>
+                     <figure class="image is-4by3">
+                         <img src="https://bulma.io/images/placeholders/640x480.png">
+                    </figure>
+               </article>
+          </div>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+          <script src="Develop/js/script.js"></script>
 </body>
+
 </html>
