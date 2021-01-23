@@ -34,3 +34,17 @@
 .list li:hover {
     font-weight: bold;
 }
+
+.title-top {
+     font-size: 5em;
+     text-align: center; 
+}
+
+.subtitle-top {
+     text-align: center;
+     font-size: 2em;
+}
+
+.btn1{
+    min-height: 30px;
+}
