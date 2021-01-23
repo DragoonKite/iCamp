@@ -6,7 +6,7 @@
 
 #hero {
     /* background-image: linear-gradient(to bottom right, red, yellow); */
-    background-image: linear-gradient(to bottom right, sienna, darkgreen, navy);
+    background-image: linear-gradient(to bottom right, rgb(177, 104, 10), rgb(0, 100, 0), rgb(177, 104, 10));
     /* margin-bottom: 20px; */
 }
 
@@ -52,7 +52,7 @@
 .sienna {
 
     border-radius: 0;
-    background-image:url(https://think.kera.org/wp-content/uploads/2020/05/shutterstock_750703924-800x500.jpg);
+    background-image:url(https://images.pexels.com/photos/2108709/pexels-photo-2108709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -60,3 +60,28 @@
 #parkList {
     display: none;
 }
+
+#rightBar p {
+     color: white;    
+}
+
+#rightBar {
+     min-height: 500px;
+     border-radius: 0;
+     background-image:url(https://wallpaperset.com/w/full/b/8/0/153395.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     
+ }
+
+ #doggo {
+      display: none; 
+ }
+
+ .is-ancestor {
+     height: 100%
+ }
+
+ .mainCol {
+      height: 100%
+ }
