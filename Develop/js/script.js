@@ -50,6 +50,7 @@ var parksInState = function(){
         };
     })
 };
+
 $("h1").on('click', function(){
     parksInState();
 })

@@ -1,0 +1,87 @@
+#camp {
+    color: sienna;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+#hero {
+    /* background-image: linear-gradient(to bottom right, red, yellow); */
+    background-image: linear-gradient(to bottom right, rgb(177, 104, 10), rgb(0, 100, 0), rgb(177, 104, 10));
+    /* margin-bottom: 20px; */
+}
+
+.sidebar {
+    background-color: tan;
+    border-radius: 0%;
+}
+
+.submit {
+    width: 100%;
+    padding: 10px 0;
+    border: solid 2px black;
+    font-size: large;
+    text-align: center;
+}
+
+.btn1 {
+    width: 100%;
+    padding-top: 5px;
+    font-weight: bold;
+    border: solid 2px black;
+    border-top: none;
+}
+
+.list li:hover {
+    font-weight: bold;
+}
+
+.title-top {
+     font-size: 5em;
+     text-align: center; 
+}
+
+.subtitle-top {
+     text-align: center;
+     font-size: 2em;
+}
+
+.btn1{
+    min-height: 30px;
+}
+
+.sienna {
+
+    border-radius: 0;
+    background-image:url(https://images.pexels.com/photos/2108709/pexels-photo-2108709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parkList {
+    display: none;
+}
+
+#rightBar p {
+     color: white;    
+}
+
+#rightBar {
+     min-height: 500px;
+     border-radius: 0;
+     background-image:url(https://wallpaperset.com/w/full/b/8/0/153395.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     
+ }
+
+ #doggo {
+      display: none; 
+ }
+
+ .is-ancestor {
+     height: 100%
+ }
+
+ .mainCol {
+      height: 100%
+ }
