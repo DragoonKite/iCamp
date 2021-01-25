@@ -15,13 +15,13 @@
 </head>
 
 <body>
-     <hero class="hero is-primary">
+     <hero class="hero is-primary" id="header">
           <div class="hero-body" id="hero">
                <div class="container">
-                    <h1 class="title-top">
+                    <h1 class="title intro">
                          i<span id="camp">Camp</span>
                     </h1>
-                    <h2 class="subtitle-top">
+                    <h2 class="subtitle">
                          National Parks
                     </h2>
                </div>
@@ -29,7 +29,7 @@
      </hero>
 
      <div class="tile is-ancestor" id="mainCol">
-          <div class="tile is-half is-vertical is-parent column" >
+            <div class="tile is-half is-vertical is-parent column" id="section">
                <div class="tile is-child  box sienna">
                     <input placeholder="Search by State" class="submit"></input>
                     <button type="submit" class="btn1" id="stateSearchBtn">
@@ -43,9 +43,9 @@
                          </ul>
                     </div>
                </div>
-          </div>
+            </div>
 
-          <div class="tile is-parent">
+          <div class="tile is-parent" style="padding-left: 0px;">
                <article class="tile is-half is-child box sidebar" id="rightBar">
                     <p class="title">Select a park first.</p>
                     <input type="date" id='weatherDateMax' max = "">
@@ -55,11 +55,23 @@
                     <div id="weatherContainer">
                          
                     </div>
-                     <figure class="image is-4by3" id="doggo">
-                         <img src="https://images.pexels.com/photos/1564506/pexels-photo-1564506.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                    </figure>
                </article>
           </div>
+        </div>
+
+        <footer class="footer bottomPage">
+            <div class="content has-text-centered">
+                <p>
+                Develops:
+                </p>
+                <ul>
+                    <li><a href="">Ramon Flowers</a> | <a>Frank Depaolo</a></li>
+                    <li>Frank DePaolo</li>
+                </ul>
+            </div>
+        </footer>
+
+    
 
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>

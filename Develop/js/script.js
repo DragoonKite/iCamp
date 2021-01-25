@@ -82,7 +82,7 @@ var displayWeather = function(){
             })
         }
         else{
-            //if api fecth fails, alert the user
+            //if api fetch fails, alert the user
             alert("Error: " + response.statusText)
         };
     });

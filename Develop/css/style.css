@@ -4,15 +4,22 @@
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 
+.intro {
+    font-size: 4rem;
+}
+
 #hero {
-    /* background-image: linear-gradient(to bottom right, red, yellow); */
     background-image: linear-gradient(to bottom right, rgb(177, 104, 10), rgb(0, 100, 0), rgb(177, 104, 10));
-    /* margin-bottom: 20px; */
+    
 }
 
 .sidebar {
     background-color: tan;
     border-radius: 0%;
+}
+
+#section {
+    padding: 12px 2px;
 }
 
 .submit {
@@ -54,11 +61,13 @@
     border-radius: 0;
     background-image:url(https://images.pexels.com/photos/2108709/pexels-photo-2108709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
+    /* min-height: 10rem; */
 }
 
 #parkListContainer {
     display: none;
+    opacity: 90%;
 }
 
 #weatherDateMax, 
@@ -76,7 +85,7 @@
      border-radius: 0;
      background-image:url(https://wallpaperset.com/w/full/b/8/0/153395.jpg);
      background-repeat: no-repeat;
-     background-size: cover;
+     background-size: 100% 100%;
      
  }
 
@@ -90,4 +99,9 @@
 
  .mainCol {
       height: 100%
+ }
+
+ .bottomPage {
+     background-color: black;
+     color: white;
  }
