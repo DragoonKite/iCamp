@@ -52,7 +52,7 @@ var parksInState = function(state){
                 //display the name of each national park
                 for(var i=0; i < data.data.length; i++){
                     var listItem = $("<li>");
-                    listItem.text(data.data[i].fullName);
+                    listItem.html('<span style="cursor:pointer">' + data.data[i].fullName + '</span>' );
                     $("#parkList").append(listItem);
                 };
 
