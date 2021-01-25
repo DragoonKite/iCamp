@@ -7,6 +7,7 @@ var searchedState = "";
 var searchedWeatherEnd = ""; */
 var stateParks = [];
 var selectedPark = 0;
+var pastSearch = [];
 
 var stateCodes = {AL:'alabama', AK:'alaska', AZ:'arizona', AR:"arkansa", CA:'california', CO:'colorado', CT:'connecticut', DE:'deleware', DC:'district of columbia', FL:'florida', GA:'georgia', HI:'hawaii', ID:'idaho', IL:'illinois',IN:'indiana', IA:'iowa', KS:'kansas', KY:'kentucky', LA:'louisiana', ME:'maine',MD:'maryland', MA:'massachusetts', MI:'michigan', MN:'minnesota', MS:'mississippi',MO:'missouri', MT:'montana', NE:'nebraska', NV:'nevada', NH:'new hampshire', NJ:'new jersey', NM:'new mexico', NY:'new york', NC:'north carolina', ND:'north dakota',OH:'ohio', OK:'oklahoma', OR:'oregon', PA:'pennsylvania', RI:'rhode island', SC:'south carolina', SD:'south dakota', TN:'tennessee', TX:'texas', UT:'utah', VT:'vermont',VA:'virginia', WA:'washington', WV:'west virginia', WI:'wisconsin', WY:'wyoming'};
 
@@ -49,10 +50,12 @@ var parksInState = function(state){
                 //makes park list container visable to user
                 $("#parkList").empty();
                 $("#parkListContainer").show();
+                $("#searchTitle").text('National Parks')
                 //display the name of each national park
                 for(var i=0; i < data.data.length; i++){
                     var listItem = $("<li>");
                     listItem.html('<span style="cursor:pointer">' + data.data[i].fullName + '</span>' );
+                    //add id for other functions to track park
                     listItem.attr('id', i);
                     $("#parkList").append(listItem);
                 };
@@ -87,7 +90,29 @@ var displayWeather = function(){
                 var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH");
                 var uvi = $("<div>").text("UV Index: " + data.current.uvi);
                 $("#weatherContainer").append(temp,hum,wind,uvi);
-            })
+
+                //forecast data
+                var cardHolder = $("<div>").attr('id', 'weatherCardHolder')
+                .html('4-Day Forecast')
+                .addClass('tile is-parent');
+            
+                for(var i=0; i < 4; i++){
+                    var forecastDate = dayjs().add(i+1,'d').format("MMM-DD-YYYY");
+                    console.log(forecastDate);
+                    var forecastTemp = data.daily[i].temp.day;
+                    var forecastHumid = data.daily[i].humidity;
+                    var forecastCoverIcon = data.daily[i].weather[0].icon;
+                    var forecastCoverDesc = data.daily[i].weather[0].description;
+
+                    //create card
+                    var forecast = $("<div>").addClass('tile is-child is-3');
+                    forecast.html("<h5>" + forecastDate + "</h5><img src='http://openweathermap.org/img/wn/" + forecastCoverIcon + "@2x.png' alt='" + forecastCoverDesc + "'></span><div>Temp: " + forecastTemp + " \u00B0 F </div><span>Humidity: " + forecastHumid + "%</span>");
+
+                    //add card
+                    cardHolder.append(forecast);
+                };
+                $("#weatherContainer").append(cardHolder);
+            });
         }
         else{
             //if api fetch fails, alert the user
@@ -96,22 +121,53 @@ var displayWeather = function(){
     });
 };
 
-var weatherBtnCheck = function(){
-    if(searchedWeatherStart !== "" && searchedWeatherEnd !== ""){
-        $("#weatherSearchBtn").show();
-    }
-}
+//save up to last three searches
+var saveSearch = function(){
+    //remove duplicates
+    uniqueSearch = [...new Set(pastSearch)];
+    pastSearch = Array.from(uniqueSearch);
+    while (pastSearch.length > 3){
+        pastSearch.shift();
+    };
+    localStorage.setItem('pastSearch', JSON.stringify(pastSearch));
+};
 
-$("#stateSearchBtn").on('click', function(){
-    searchedState = $(".submit")[0].value.toLowerCase();
-    //checks to see if the value listed is one fo the states or the short 2 letter state code
+//load up to last three searches
+var loadSearchHistory = function(){
+    //load history from local storage
+    pastSearch = JSON.parse(localStorage.getItem('pastSearch'));
+
+    //if nothing retrieved, set variable to empty array
+    if(!pastSearch){
+        pastSearch = []
+    }
+    else{
+        displayHistory(pastSearch);
+    };
+};
+
+var displayHistory = function(){
+    if(pastSearch.length > 0){
+        $("#parkListContainer").show()
+        $("#searchTitle").text('Last 3 Searches');
+        for (var i=0; i < pastSearch.length; i++){
+            var listItem = $("<li>").text(pastSearch[i])
+            $("#parkList").append(listItem)
+        }
+    };
+};
+
+var verifyState = function(state){
     for(key in stateCodes){
       
-        if (searchedState === stateCodes[key] || searchedState.toUpperCase() === key){
+        if (state === stateCodes[key] || state.toUpperCase() === key){
             //if so, clear searchbox and send 2 letter code to nps api
             $(".submit")[0].value = "";
             $(".submit")[0].placeholder = "Search by State"
             parksInState(key)
+            //save search
+            pastSearch.push(state);
+            saveSearch();
             return;
         }     
     }
@@ -119,6 +175,17 @@ $("#stateSearchBtn").on('click', function(){
     //if not; clear searchbox and ask user to re-enter a search option
     $(".submit")[0].value = "";
     $(".submit")[0].placeholder = "That state is not recognized. Please enter another.";
+};
+/* var weatherBtnCheck = function(){
+    if(searchedWeatherStart !== "" && searchedWeatherEnd !== ""){
+        $("#weatherSearchBtn").show();
+    }
+} */
+
+$("#stateSearchBtn").on('click', function(){
+    searchedState = $(".submit")[0].value.toLowerCase();
+    //checks to see if the value listed is one fo the states or the short 2 letter state code
+    verifyState(searchedState);
 
 });
 
@@ -142,10 +209,16 @@ $("ul").on('click', 'li',  function(){
     //display weather date selection
    /*  $("#weatherDateMax").show();
     $("#weatherDateMin").show(); */
-    $("#rightBar p").html("Current Weather");
-    //get selected park
-    selectedPark = this.id
-    displayWeather();
+    if($("#searchTitle").text() === 'Last 3 Searches'){
+        verifyState(this.textContent)
+    }
+    else{
+        $("#rightBar p").html("Current Weather");
+        //get selected park
+        selectedPark = this.id
+        displayWeather();
+    }
 });
 
+loadSearchHistory();
 getLocation();
