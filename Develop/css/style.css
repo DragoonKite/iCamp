@@ -1,7 +1,16 @@
+* {
+    font-family: 'K2D', sans-serif;
+}
+
 #camp {
     color: sienna;
     font-weight: bold;
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+#stateSearchBtn {
+    border-radius: 7px;
+    padding: 0;
 }
 
 .intro {
@@ -9,7 +18,14 @@
 }
 
 #hero {
-    background-image: linear-gradient(to bottom right, rgb(177, 104, 10), rgb(0, 100, 0), rgb(177, 104, 10));
+    background-image: linear-gradient(to bottom right,rgb(168, 117, 23), rgb(0, 100, 0), rgb(168, 117, 23));
+    padding: 10px;
+    border-bottom: solid 2px white;
+    
+}
+
+.bulma {
+    margin-left: 20px;
 }
 
 .sidebar {
@@ -18,7 +34,7 @@
 }
 
 #section {
-    padding: 12px 2px;
+    padding: 12px 2px 0 0;
 }
 
 .submit {
@@ -27,6 +43,7 @@
     border: solid 2px black;
     font-size: large;
     text-align: center;
+    border-radius: 7px;
 }
 
 .btn1 {
@@ -58,7 +75,7 @@
 .sienna {
 
     border-radius: 0;
-    background-image:url(https://images.pexels.com/photos/2108709/pexels-photo-2108709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    background-image:url(https://cf.ltkcdn.net/camping/images/orig/243208-1600x1030-types-campfires.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /* min-height: 10rem; */
@@ -80,7 +97,7 @@
 }
 
 #rightBar {
-     min-height: 500px;
+     min-height: 635px;
      border-radius: 0;
      background-image:url(https://wallpaperset.com/w/full/b/8/0/153395.jpg);
      background-repeat: no-repeat;
@@ -103,8 +120,14 @@
  .bottomPage {
      background-color: black;
      color: white;
+     padding: 50px;
  }
 
  .bottomPage a {
      color: orange;
+ }
+
+ .bottomPage a:hover {
+     font-weight: bold;
+     color: green;
  }
