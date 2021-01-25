@@ -10,7 +10,6 @@
 
 #hero {
     background-image: linear-gradient(to bottom right, rgb(177, 104, 10), rgb(0, 100, 0), rgb(177, 104, 10));
-    
 }
 
 .sidebar {
@@ -104,4 +103,8 @@
  .bottomPage {
      background-color: black;
      color: white;
+ }
+
+ .bottomPage a {
+     color: orange;
  }
