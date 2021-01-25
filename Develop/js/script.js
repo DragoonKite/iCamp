@@ -47,6 +47,7 @@ var parksInState = function(state){
         if(response.ok){
             response.json().then(function(data){
                 //makes park list container visable to user
+                $("#parkList").empty();
                 $("#parkListContainer").show();
                 //display the name of each national park
                 for(var i=0; i < data.data.length; i++){
