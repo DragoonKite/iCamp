@@ -151,7 +151,7 @@ var displayHistory = function(){
         $("#parkListContainer").show()
         $("#searchTitle").text('Last 3 Searches');
         for (var i=0; i < pastSearch.length; i++){
-            var listItem = $("<li>").text(pastSearch[i])
+            var listItem = $("<li>").html('<span style="cursor:pointer">' + pastSearch[i] + '</span>');
             $("#parkList").append(listItem)
         }
     };
