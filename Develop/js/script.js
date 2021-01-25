@@ -3,8 +3,8 @@ var userState = "";
 var userLat = 0;
 var userLon = 0;
 var searchedState = "";
-var searchedWeatherStart = "";
-var searchedWeatherEnd = "";
+/* var searchedWeatherStart = "";
+var searchedWeatherEnd = ""; */
 var stateParks = [];
 var selectedPark = 0;
 
@@ -53,6 +53,7 @@ var parksInState = function(state){
                 for(var i=0; i < data.data.length; i++){
                     var listItem = $("<li>");
                     listItem.html('<span style="cursor:pointer">' + data.data[i].fullName + '</span>' );
+                    listItem.attr('id', i);
                     $("#parkList").append(listItem);
                 };
 
@@ -79,6 +80,13 @@ var displayWeather = function(){
         if(response.ok){
             response.json().then(function(data){
                 console.log(data)
+                //current weather data
+                $("#weatherContainer").empty();
+                var temp = $("<div>").text("Temperature: " + data.current.temp + "\u00b0 F");
+                var hum = $("<div>").text("Humidity: " + data.current.humidity + "%");
+                var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH");
+                var uvi = $("<div>").text("UV Index: " + data.current.uvi);
+                $("#weatherContainer").append(temp,hum,wind,uvi);
             })
         }
         else{
@@ -114,7 +122,7 @@ $("#stateSearchBtn").on('click', function(){
 
 });
 
-$("#weatherDateMax").change(function(){
+/* $("#weatherDateMax").change(function(){
     //pulls date selected from calendar
     searchedWeatherStart = dayjs(this.value);
     console.log(searchedWeatherStart);
@@ -126,17 +134,18 @@ $("#weatherDateMin").change(function(){
     searchedWeatherEnd = dayjs(this.value);
     console.log(searchedWeatherEnd);
     weatherBtnCheck();
-});
+}); */
 
 
 
 $("ul").on('click', 'li',  function(){
     //display weather date selection
-    $("#weatherDateMax").show();
-    $("#weatherDateMin").show();
-    $("#rightBar p").html("Select a start and end date.");
+   /*  $("#weatherDateMax").show();
+    $("#weatherDateMin").show(); */
+    $("#rightBar p").html("Current Weather");
     //get selected park
-    selectedPark = this.value
+    selectedPark = this.id
+    displayWeather();
 });
 
 getLocation();
