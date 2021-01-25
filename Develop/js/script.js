@@ -3,8 +3,10 @@ var userState = "";
 var userLat = 0;
 var userLon = 0;
 var searchedState = "";
-var searchedWeather = "";
+var searchedWeatherStart = "";
+var searchedWeatherEnd = "";
 var stateParks = [];
+var selectedPark = 0;
 
 var stateCodes = {AL:'alabama', AK:'alaska', AZ:'arizona', AR:"arkansa", CA:'california', CO:'colorado', CT:'connecticut', DE:'deleware', DC:'district of columbia', FL:'florida', GA:'georgia', HI:'hawaii', ID:'idaho', IL:'illinois',IN:'indiana', IA:'iowa', KS:'kansas', KY:'kentucky', LA:'louisiana', ME:'maine',MD:'maryland', MA:'massachusetts', MI:'michigan', MN:'minnesota', MS:'mississippi',MO:'missouri', MT:'montana', NE:'nebraska', NV:'nevada', NH:'new hampshire', NJ:'new jersey', NM:'new mexico', NY:'new york', NC:'north carolina', ND:'north dakota',OH:'ohio', OK:'oklahoma', OR:'oregon', PA:'pennsylvania', RI:'rhode island', SC:'south carolina', SD:'south dakota', TN:'tennessee', TX:'texas', UT:'utah', VT:'vermont',VA:'virginia', WA:'washington', WV:'west virginia', WI:'wisconsin', WY:'wyoming'};
 
@@ -18,7 +20,7 @@ var getLocation = function(){
     }).then(findLocation());
 };
 
-//uses ip ddress to get physical location data
+//uses ip address to get physical location data
 var findLocation = function(){
     var apiURL = "http://ip-api.com/json/" + userIP;
     
@@ -40,7 +42,6 @@ var findLocation = function(){
 //get state parks in user's state
 var parksInState = function(state){
     var apiURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + state + "&api_key=URIxdIswkdTl4euYJO1wnZGabiusT8WBy7v5SX5k";
-    console.log(apiURL)
 
     fetch(apiURL).then(function(response){
         if(response.ok){
@@ -66,6 +67,32 @@ var parksInState = function(state){
     })
 };
 
+//display weather for selected park/date
+var displayWeather = function(){
+    var parkLat = stateParks[selectedPark].latitude;
+    var parkLon = stateParks[selectedPark].longitude;
+    
+    var apiURLOne = "https://api.openweathermap.org/data/2.5/onecall?lat=" + parkLat + "&lon=" + parkLon + "&exclude=minutely,hourly&units=imperial&appid=1ec4b7941e836b90f16c4552ee588075"
+
+    fetch(apiURLOne).then(function(response){
+        if(response.ok){
+            response.json().then(function(data){
+                console.log(data)
+            })
+        }
+        else{
+            //if api fecth fails, alert the user
+            alert("Error: " + response.statusText)
+        };
+    });
+};
+
+var weatherBtnCheck = function(){
+    if(searchedWeatherStart !== "" && searchedWeatherEnd !== ""){
+        $("#weatherSearchBtn").show();
+    }
+}
+
 $("#stateSearchBtn").on('click', function(){
     searchedState = $(".submit")[0].value.toLowerCase();
     //checks to see if the value listed is one fo the states or the short 2 letter state code
@@ -74,6 +101,7 @@ $("#stateSearchBtn").on('click', function(){
         if (searchedState === stateCodes[key] || searchedState.toUpperCase() === key){
             //if so, clear searchbox and send 2 letter code to nps api
             $(".submit")[0].value = "";
+            $(".submit")[0].placeholder = "Search by State"
             parksInState(key)
             return;
         }     
@@ -85,8 +113,29 @@ $("#stateSearchBtn").on('click', function(){
 
 });
 
-$("#weatherDate").change(function(){
-    searchedWeather = dayjs(this.value);
+$("#weatherDateMax").change(function(){
+    //pulls date selected from calendar
+    searchedWeatherStart = dayjs(this.value);
+    console.log(searchedWeatherStart);
+    weatherBtnCheck();
+});
+
+$("#weatherDateMin").change(function(){
+    //pulls date selected from calendar
+    searchedWeatherEnd = dayjs(this.value);
+    console.log(searchedWeatherEnd);
+    weatherBtnCheck();
+});
+
+
+
+$("ul").on('click', 'li',  function(){
+    //display weather date selection
+    $("#weatherDateMax").show();
+    $("#weatherDateMin").show();
+    $("#rightBar p").html("Select a start and end date.");
+    //get selected park
+    selectedPark = this.value
 });
 
 getLocation();

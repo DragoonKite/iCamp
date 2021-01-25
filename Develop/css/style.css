@@ -61,6 +61,12 @@
     display: none;
 }
 
+#weatherDateMax, 
+#weatherDateMin, 
+#weatherSearchBtn {
+    display: none;
+}
+
 #rightBar p {
      color: white;    
 }
