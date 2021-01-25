@@ -11,25 +11,31 @@
           integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
           crossorigin="anonymous" />
      <link rel="stylesheet" href="./Develop/css/style.css" />
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=K2D:wght@300&display=swap" rel="stylesheet">
      <title>iCamp</title>
 </head>
 
 <body>
-     <hero class="hero is-primary">
+     <hero class="hero is-primary" id="header">
           <div class="hero-body" id="hero">
-               <div class="container">
-                    <h1 class="title-top">
+               <div class="container bulma">
+                    <h1 class="title intro">
                          i<span id="camp">Camp</span>
                     </h1>
-                    <h2 class="subtitle-top">
-                         National Parks
+                    <h2 class="subtitle">
+                         Visit National Parks
                     </h2>
                </div>
           </div>
      </hero>
 
      <div class="tile is-ancestor" id="mainCol">
+<<<<<<< HEAD
           <div class="tile is-half is-vertical is-parent column">
+=======
+            <div class="tile is-half is-vertical is-parent column" id="section">
+>>>>>>> develop
                <div class="tile is-child  box sienna">
                     <input placeholder="Search by State" class="submit"></input>
                     <button type="submit" class="btn1" id="stateSearchBtn">
@@ -37,17 +43,17 @@
                     </button>
 
                     <div class="tile is-child box sidebar" id="parkListContainer">
-                         <p class="title">National Parks </p>
+                         <p class="title">National Parks</p>
                          <ul class="list" id ="parkList">
                               
                          </ul>
                     </div>
                </div>
-          </div>
+            </div>
 
-          <div class="tile is-parent">
+          <div class="tile is-parent" style="padding-left: 0px; padding-bottom: 0px;">
                <article class="tile is-half is-child box sidebar" id="rightBar">
-                    <p class="title">Select a park first.</p>
+                    <p class="title">Choose a park. See the weather!</p>
                     <input type="date" id='weatherDateMax' max = "">
                     <input type="date" id='weatherDateMin' min = "">
                     <button class="btn1" id="weatherSearchBtn">Display Weather</button>
@@ -55,11 +61,24 @@
                     <div id="weatherContainer">
                          
                     </div>
-                     <figure class="image is-4by3" id="doggo">
-                         <img src="https://images.pexels.com/photos/1564506/pexels-photo-1564506.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                    </figure>
                </article>
           </div>
+        </div>
+
+        <footer class="footer bottomPage">
+            <div class="content has-text-centered">
+
+                <h3 style="color: white; text-decoration: underline;">
+                Developers:
+                </h3>
+
+                <ul style="list-style: none; color: white;">
+                    <li><a href="https://rocketorangemen.github.io/Portfolio/"target="_blank">Ramon Flowers (Portfolio)</a> | <a href="https://dragoonkite.github.io/portfolio/"target="_blank">Frank Depaolo (Portfolio)</a> | <a href="https://www.facebook.com/jason.fletcher.90857/">Jason Fletcher (Facebook)</a> | <a>Erix Flores</a> | <a>Nick Duran</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    
 
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
