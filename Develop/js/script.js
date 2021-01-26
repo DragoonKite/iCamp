@@ -91,13 +91,14 @@ var displayWeather = function(){
                 var hum = $("<div>").text("Humidity: " + data.current.humidity + "%").addClass('right-style');
                 var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH").addClass('right-style');
                 var uvi = $("<div>").text("UV Index: " + data.current.uvi).addClass('right-style');
-                $("#weatherContainer").append(temp,hum,wind,uvi);
+                $("#weatherContainer").append(temp,hum,wind,uvi,$("<div>").text('4-Day Forecast').addClass('right-style'));
 
                 $("#forestSide").addClass('right-side right-style')
 
+
                 //forecast data
                 var cardHolder = $("<div>").attr('id', 'weatherCardHolder')
-                .html('4-Day Forecast').addClass('right-style')
+                .addClass('right-style')
                 .addClass('tile is-parent');
             
                 for(var i=0; i < 4; i++){
