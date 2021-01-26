@@ -213,7 +213,7 @@ $("ul").on('click', 'li',  function(){
         verifyState(this.textContent)
     }
     else{
-        $("#rightBar p").html("Current Weather");
+        $("#rightBar p").html("Current Weather for " + this.textContent);
         //get selected park
         selectedPark = this.id
         displayWeather();
