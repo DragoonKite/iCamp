@@ -30,7 +30,9 @@
 
 .sidebar {
     background-color: tan;
-    border-radius: 0%;
+    border-radius: 7px;
+    border: solid 2px black;
+    border-top: none;
 }
 
 #section {
@@ -96,13 +98,22 @@
      color: white;    
 }
 
+.right-side {
+    background-color: rgb(168, 159, 159);
+    opacity: 90%;
+}
+
+.right-style {
+    font-weight: bold;
+    color: navy;
+}
+
 #rightBar {
      min-height: 635px;
      border-radius: 0;
      background-image:url(https://wallpaperset.com/w/full/b/8/0/153395.jpg);
      background-repeat: no-repeat;
      background-size: 100% 100%;
-     
  }
 
  #doggo {
