@@ -95,7 +95,7 @@ var displayWeather = function(){
 
                 //forecast data
                 var cardHolder = $("<div>").attr('id', 'weatherCardHolder')
-                .html('<h2>4-Day Forecast</h2>')
+                .html('4-Day Forecast')
                 .addClass('tile is-parent');
             
                 for(var i=0; i < 4; i++){
