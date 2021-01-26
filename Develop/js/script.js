@@ -87,15 +87,17 @@ var displayWeather = function(){
                 console.log(data)
                 //current weather data
                 $("#weatherContainer").empty();
-                var temp = $("<div>").text("Temperature: " + data.current.temp + "\u00b0 F");
-                var hum = $("<div>").text("Humidity: " + data.current.humidity + "%");
-                var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH");
-                var uvi = $("<div>").text("UV Index: " + data.current.uvi);
+                var temp = $("<div>").text("Temperature: " + data.current.temp + "\u00b0 F").addClass('right-style');
+                var hum = $("<div>").text("Humidity: " + data.current.humidity + "%").addClass('right-style');
+                var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH").addClass('right-style');
+                var uvi = $("<div>").text("UV Index: " + data.current.uvi).addClass('right-style');
                 $("#weatherContainer").append(temp,hum,wind,uvi);
+
+                $("#forestSide").addClass('right-side right-style')
 
                 //forecast data
                 var cardHolder = $("<div>").attr('id', 'weatherCardHolder')
-                .html('4-Day Forecast')
+                .html('4-Day Forecast').addClass('right-style')
                 .addClass('tile is-parent');
             
                 for(var i=0; i < 4; i++){
