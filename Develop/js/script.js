@@ -79,6 +79,8 @@ var displayWeather = function(){
     
     var apiURLOne = "https://api.openweathermap.org/data/2.5/onecall?lat=" + parkLat + "&lon=" + parkLon + "&exclude=minutely,hourly&units=imperial&appid=1ec4b7941e836b90f16c4552ee588075"
 
+    $("#rightBar").css('background-image', 'url(' + stateParks[selectedPark].images[0].url + ')');
+
     fetch(apiURLOne).then(function(response){
         if(response.ok){
             response.json().then(function(data){
@@ -93,7 +95,7 @@ var displayWeather = function(){
 
                 //forecast data
                 var cardHolder = $("<div>").attr('id', 'weatherCardHolder')
-                .html('4-Day Forecast')
+                .html('<h2>4-Day Forecast</h2>')
                 .addClass('tile is-parent');
             
                 for(var i=0; i < 4; i++){
@@ -213,7 +215,7 @@ $("ul").on('click', 'li',  function(){
         verifyState(this.textContent)
     }
     else{
-        $("#rightBar p").html("Current Weather");
+        $("#rightBar p").html("Current Weather for " + this.textContent);
         //get selected park
         selectedPark = this.id
         displayWeather();
