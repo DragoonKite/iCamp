@@ -48,8 +48,8 @@ This project is currently in progress.  As new technologies emerge and client ne
 When planning a trip to the National Parks, knowing the dates, weather, amenities and directions in one app is a valuable asset.
 	
 ## Contact
-Created by Frank Depoalo [@frank.depaolo@yahoo.com](https://github.com/DragoonKite/) - feel free to contact me!
-Created by Nice Duran [@nvduran@gmail.com](https://github.com/nvduran/) - feel free to contact me!
-Created by Jason Fletcher [@blueink38@yahoo.com](https://github.com/blueink38/) - feel free to contact me!
-Created by Erix Flores [@erixflores@gmail.com](https://github.com/erixflores/) - feel free to contact me!
-Created by Ramon Flowers [@rocketorangemen@gmail.com](https://github.com/rocketorangemen/) - feel free to contact me!
+Created by Frank Depoalo [@frank.depaolo@yahoo.com](https://github.com/DragoonKite/) - feel free to contact me!<br/>
+Created by Nice Duran [@nvduran@gmail.com](https://github.com/nvduran/) - feel free to contact me!<br/>
+Created by Jason Fletcher [@blueink38@yahoo.com](https://github.com/blueink38/) - feel free to contact me!<br/>
+Created by Erix Flores [@erixflores@gmail.com](https://github.com/erixflores/) - feel free to contact me!<br/>
+Created by Ramon Flowers [@rocketorangemen@gmail.com](https://github.com/rocketorangemen/) - feel free to contact me!<br/>
