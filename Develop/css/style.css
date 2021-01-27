@@ -21,6 +21,7 @@
     background-image: linear-gradient(to bottom right,rgb(168, 117, 23), rgb(0, 100, 0), rgb(168, 117, 23));
     padding: 10px;
     border-bottom: solid 2px white;
+    position: relative;
     
 }
 
@@ -101,6 +102,7 @@
 .right-side {
     background-color: rgb(168, 159, 159);
     opacity: 90%;
+    border-radius: 5px;
 }
 
 .right-style {
