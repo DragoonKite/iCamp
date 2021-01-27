@@ -185,6 +185,7 @@ var verifyState = function(state){
     }
 } */
 
+
 $("#stateSearchBtn").on('click', function(){
     searchedState = $(".submit")[0].value.toLowerCase();
     //checks to see if the value listed is one fo the states or the short 2 letter state code
