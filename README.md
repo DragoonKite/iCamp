@@ -49,7 +49,7 @@ When planning a trip to the National Parks, knowing the dates, weather, amenitie
 	
 ## Contact
 Created by Frank Depoalo [@frank.depaolo@yahoo.com](https://github.com/DragoonKite/) - feel free to contact me!<br/>
-Created by Nice Duran [@nvduran@gmail.com](https://github.com/nvduran/) - feel free to contact me!<br/>
+Created by Ramon Flowers [@rocketorangemen@gmail.com](https://github.com/rocketorangemen/) - feel free to contact me!<br/>
 Created by Jason Fletcher [@blueink38@yahoo.com](https://github.com/blueink38/) - feel free to contact me!<br/>
 Created by Erix Flores [@erixflores@gmail.com](https://github.com/erixflores/) - feel free to contact me!<br/>
-Created by Ramon Flowers [@rocketorangemen@gmail.com](https://github.com/rocketorangemen/) - feel free to contact me!<br/>
+Created by Nice Duran [@nvduran@gmail.com](https://github.com/nvduran/) - feel free to contact me!<br/>
