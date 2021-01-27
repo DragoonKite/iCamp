@@ -159,3 +159,11 @@
     font-size: 1.4rem;
     font-weight: none;
  }
+
+ .logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 10%;
+    float: right;
+    margin-top: 1%;
+ }
