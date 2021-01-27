@@ -90,7 +90,7 @@ var displayWeather = function(){
                 var hum = $("<div>").text("Humidity: " + data.current.humidity + "%").addClass('right-style');
                 var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH").addClass('right-style');
                 var uvi = $("<div>").text("UV Index: " + data.current.uvi).addClass('right-style');
-                $("#weatherContainer").append(temp,hum,wind,uvi,$("<div>").text('4-Day Forecast').addClass('right-style'));
+                $("#weatherContainer").append(temp,hum,wind,uvi,$("<div>").text('4-Day Forecast').addClass('fourday'));
 
                 $("#forestSide").addClass('right-side right-style')
 

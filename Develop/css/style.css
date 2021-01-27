@@ -106,6 +106,7 @@
 .right-style {
     font-weight: bold;
     color: navy;
+    padding-left: 3px;
 }
 
 #rightBar {
@@ -149,4 +150,10 @@
 
  #weatherCardHolder {
     text-align: center;
+ }
+
+ .fourday {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: none;
  }
