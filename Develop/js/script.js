@@ -62,7 +62,6 @@ var parksInState = function(state){
 
                 //save last searched state data for future use
                 stateParks = data.data;
-                console.log(stateParks);
             });
         }
         else{
@@ -91,7 +90,7 @@ var displayWeather = function(){
                 var hum = $("<div>").text("Humidity: " + data.current.humidity + "%").addClass('right-style');
                 var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH").addClass('right-style');
                 var uvi = $("<div>").text("UV Index: " + data.current.uvi).addClass('right-style');
-                $("#weatherContainer").append(temp,hum,wind,uvi,$("<div>").text('4-Day Forecast').addClass('right-style'));
+                $("#weatherContainer").append(temp,hum,wind,uvi,$("<div>").text('4-Day Forecast').addClass('fourday'));
 
                 $("#forestSide").addClass('right-side right-style')
 
@@ -103,7 +102,6 @@ var displayWeather = function(){
             
                 for(var i=0; i < 4; i++){
                     var forecastDate = dayjs().add(i+1,'d').format("MMM-DD-YYYY");
-                    console.log(forecastDate);
                     var forecastTemp = data.daily[i].temp.day;
                     var forecastHumid = data.daily[i].humidity;
                     var forecastCoverIcon = data.daily[i].weather[0].icon;
@@ -211,7 +209,7 @@ $("#weatherDateMin").change(function(){
 
 
 
-$("ul").on('click', 'li',  function(){
+$("#parkList").on('click', 'li',  function(){
     //display weather date selection
    /*  $("#weatherDateMax").show();
     $("#weatherDateMin").show(); */
