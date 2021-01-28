@@ -23,7 +23,7 @@ var getLocation = function(){
 
 //uses ip address to get physical location data
 var findLocation = function(){
-    var apiURL = "http://ip-api.com/json/" + userIP;
+    var apiURL = "https://ip-api.com/json/" + userIP;
     
     fetch(apiURL).then(function(response){
         if(response.ok){
@@ -35,7 +35,7 @@ var findLocation = function(){
         }
         else{
             //if api fecth fails, alert the user
-            alert("Error: " + response.statusText)
+            //alert("Error: " + response.statusText)
         };
     });
 };
@@ -66,7 +66,7 @@ var parksInState = function(state){
         }
         else{
             //if api fecth fails, alert the user
-            alert("Error: " + response.statusText)
+            //alert("Error: " + response.statusText)
         };
     })
 };
@@ -119,7 +119,7 @@ var displayWeather = function(){
         }
         else{
             //if api fetch fails, alert the user
-            alert("Error: " + response.statusText)
+            //alert("Error: " + response.statusText)
         };
     });
 };
