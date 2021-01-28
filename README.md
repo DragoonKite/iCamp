@@ -1,5 +1,5 @@
 # iCamp
- This app allows the user to find a national or state park.  Then the user can choose the dates to visit and confirm if the camp will be open.  The weather forcast for the dates will be displayed and directions will be provided.
+ This app allows the user to find a national or state park.  Then the user can see the current weather, find directions and browse activities.  The weather forecast will be displayed and directions will be provided.
 	
 ## Table of contents
 * [General info](#general-info)
@@ -12,7 +12,7 @@
 * [Contact](#contact)
 	
 ## General info
-As people plan their outdoor adventures they want to know if the parks will be open and what the weather will be.  This app will allow the user to find the answers to these questions in one spot!
+As people plan their outdoor adventures they want to find new parks and what the weather will be.  This app will allow the user to find the answers to these questions in one spot!
 	
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
@@ -29,7 +29,6 @@ As people plan their outdoor adventures they want to know if the parks will be o
 Visit: https://dragoonkite.github.io/project1
 	
 ## Code Examples
-Show examples of usage:
 ```
 var saveSearch = function(){
     //remove duplicates
@@ -39,23 +38,24 @@ var saveSearch = function(){
         pastSearch.shift();
     };
     localStorage.setItem('pastSearch', JSON.stringify(pastSearch));
+```
 
 	
 ## Features
 * Choose a National Park
 * Find the weather forcast for specific dates
 * See different attractions and amenities for each park
-* Find directions to the Park
+* Find directions to the park
 
-To-do list:
-* Add the dates to their calendar
-* Make reservations for specific campsites
+**To-do list:**
+* Add the dates to user's calendar
+* Make future reservations for specific campsites
 	
 ## Status
 This project is currently in progress.  As new technologies emerge and client needs change, updates will be completed.
 	
 ## Inspiration
-When planning a trip to the National Parks, knowing the dates, weather, amenities and directions in one app is a valuable asset.
+When planning a trip to the National Parks, knowing the dates, weather, amenities, activities and directions in one app is a valuable asset.
 	
 ## Contact
 Created by Frank Depoalo [@frank.depaolo@yahoo.com](https://github.com/DragoonKite/) - feel free to contact me!<br/>
