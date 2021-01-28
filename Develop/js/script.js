@@ -210,7 +210,7 @@ $("#weatherDateMin").change(function(){
 
 
 
-$("ul").on('click', 'li',  function(){
+$("#parkList").on('click', 'li',  function(){
     //display weather date selection
    /*  $("#weatherDateMax").show();
     $("#weatherDateMin").show(); */
