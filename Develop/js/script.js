@@ -23,7 +23,7 @@ var getLocation = function(){
 
 //uses ip address to get physical location data
 var findLocation = function(){
-    var apiURL = "http://ip-api.com/json/" + userIP;
+    var apiURL = "https://ip-api.com/json/" + userIP;
     
     fetch(apiURL).then(function(response){
         if(response.ok){
