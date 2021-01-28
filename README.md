@@ -21,15 +21,25 @@ As people plan their outdoor adventures they want to know if the parks will be o
 * HTML5
 * CSS 2.1
 * JavaScript 1.8
-* National Park Service API
-* API for directions
+* Bulma
+* Ipify
+* ip-api
 	
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+Visit: https://dragoonkite.github.io/project1
 	
 ## Code Examples
 Show examples of usage:
-`put-your-code-here`
+```
+var saveSearch = function(){
+    //remove duplicates
+    uniqueSearch = [...new Set(pastSearch)];
+    pastSearch = Array.from(uniqueSearch);
+    while (pastSearch.length > 3){
+        pastSearch.shift();
+    };
+    localStorage.setItem('pastSearch', JSON.stringify(pastSearch));
+
 	
 ## Features
 * Choose a National Park
