@@ -83,7 +83,6 @@ var displayWeather = function(){
     fetch(apiURLOne).then(function(response){
         if(response.ok){
             response.json().then(function(data){
-                console.log(data)
                 //current weather data
                 $("#weatherContainer").empty();
                 var temp = $("<div>").text("Temperature: " + data.current.temp + "\u00b0 F").addClass('right-style');
@@ -168,8 +167,11 @@ var verifyState = function(state){
             $(".submit")[0].value = "";
             $(".submit")[0].placeholder = "Search by State"
             parksInState(key)
-            //save search
-            pastSearch.push(state);
+            //save search after capitalizing 
+            var saveItem = stateCodes[key].replace(/\b[a-z]/g, function(txtVal) {
+                return txtVal.toUpperCase();
+            });
+            pastSearch.push(saveItem);
             saveSearch();
             return;
         }     
@@ -214,7 +216,7 @@ $("#parkList").on('click', 'li',  function(){
    /*  $("#weatherDateMax").show();
     $("#weatherDateMin").show(); */
     if($("#searchTitle").text() === 'Last 3 Searches'){
-        verifyState(this.textContent)
+        verifyState(this.textContent.toLowerCase())
     }
     else{
         $("#rightBar p").html("Current Weather for " + this.textContent);
@@ -223,6 +225,18 @@ $("#parkList").on('click', 'li',  function(){
         displayWeather();
     }
 });
+
+$("#moreInfoBtn").on('click', function(){
+    var activities = stateParks[selectedPark].activities;
+    var parkEmail = stateParks[selectedPark].contacts.emailAddresses[0].emailAddress;
+    var parkPhone = stateParks[selectedPark].contacts.phoneNumbers[0].phoneNumber;
+    var direcBlurb = stateParks[selectedPark].directionsInfo;
+    var direcLink = stateParks[selectedPark].directionsUrl;
+    var parkEntranceFees = stateParks[selectedPark].entranceFees;
+    var parkFees = stateParks[selectedPark].fees;
+    var parkHours = stateParks[selectedPark].operatingHours[0].standardHours;
+    var topics = stateParks[selectedPark].topics;
+})
 
 loadSearchHistory();
 getLocation();
