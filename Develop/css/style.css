@@ -167,3 +167,27 @@
     float: right;
     margin-top: 1%;
  }
+
+ #adventure {
+    font-size: 2rem;
+    padding-left: 39%;
+ }
+
+ #moreInfo {
+     font-size: 2rem;
+     padding-left: 50%;
+     display: none;
+     color: black;
+     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+ }
+
+ #moreInfo:hover {
+     color: red;
+     text-shadow: none;
+ }
+
+ @media only screen and (max-width: 1085px) {
+  .logo {display: none;}
+  #adventure {display: none}
+  #moreInfo {display: inline-block;}
+}
