@@ -33,10 +33,10 @@ var findLocation = function(){
                 userLon = data.lon;
             });
         }
-        else{
+        /* else{
             //if api fecth fails, alert the user
             alert("Error: " + response.statusText)
-        };
+        }; */
     });
 };
 
@@ -247,7 +247,6 @@ $("#activityBtn").on('click', function(){
     for(var i=0; i<activities.length; i++){
         //create list item with activity name
         var activity = $("<li>").textContent = activities[i].name + '<br>';
-        console.log(activity);
         activitiesList.append(activity)
     };
     console.log(activitiesList)
@@ -275,10 +274,10 @@ $("#mapBtn").on('click', function(){
                 
             });
         }
-        else{
+       /*  else{
             //if api fetch fails, alert the user
             alert("Error: " + response.statusText)
-        };
+        }; */
     });
 });
 
