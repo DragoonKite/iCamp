@@ -23,7 +23,7 @@ var getLocation = function(){
 
 //uses ip address to get physical location data
 var findLocation = function(){
-    var apiURL = "http://ip-api.com/json/" + userIP;
+    var apiURL = "https://ip-api.com/json/" + userIP;
     
     fetch(apiURL).then(function(response){
         if(response.ok){
@@ -35,7 +35,7 @@ var findLocation = function(){
         }
         else{
             //if api fecth fails, alert the user
-            alert("Error: " + response.statusText)
+            //alert("Error: " + response.statusText)
         };
     });
 };
@@ -66,7 +66,7 @@ var parksInState = function(state){
         }
         else{
             //if api fecth fails, alert the user
-            alert("Error: " + response.statusText)
+            //alert("Error: " + response.statusText)
         };
     })
 };
@@ -90,7 +90,7 @@ var displayWeather = function(){
                 var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH").addClass('right-style');
                 var uvi = $("<div>").text("UV Index: " + data.current.uvi).addClass('right-style');
                 $("#weatherContainer").append(temp,hum,wind,uvi,$("<div>").text('4-Day Forecast').addClass('fourday'));
-
+                $("#extrasContainer").show();
                 $("#forestSide").addClass('right-side right-style')
 
 
@@ -118,10 +118,21 @@ var displayWeather = function(){
         }
         else{
             //if api fetch fails, alert the user
-            alert("Error: " + response.statusText)
+            //alert("Error: " + response.statusText)
         };
     });
 };
+
+$(".more").click(function() {
+    var target = $(this).data("target");
+    $("html").addClass("is-clipped");
+    $(target).addClass("is-active");
+ });
+ 
+ $(".modal-close").click(function() {
+    $("html").removeClass("is-clipped");
+    $(this).parent().removeClass("is-active");
+ });
 
 //save up to last three searches
 var saveSearch = function(){

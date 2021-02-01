@@ -1,7 +1,12 @@
+/* Body styling start */
+
 * {
     font-family: 'K2D', sans-serif;
 }
 
+/* Body styling End */
+
+/* Header styling start */
 #camp {
     color: sienna;
     font-weight: bold;
@@ -22,7 +27,6 @@
     padding: 10px;
     border-bottom: solid 2px white;
     position: relative;
-    
 }
 
 .bulma {
@@ -55,6 +59,7 @@
     font-weight: bold;
     border: solid 2px black;
     border-top: none;
+    min-height: 30px;
 }
 
 .list li:hover {
@@ -69,10 +74,6 @@
 .subtitle-top {
      text-align: center;
      font-size: 2em;
-}
-
-.btn1{
-    min-height: 30px;
 }
 
 .sienna {
@@ -167,3 +168,44 @@
     float: right;
     margin-top: 1%;
  }
+
+ #adventure {
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* position: relative; */
+ }
+
+ #extras {
+     display: flex;
+     justify-content: space-evenly;
+     padding: 2% 2%;
+     display: hidden;
+ }
+
+ .more {
+     background-color: white;
+     color: black;
+ }
+
+ #extraTitle {
+     text-align: center;
+     font-size: 1.5rem;
+     color: white;
+ }
+
+ #extrasContainer {
+     display: none;
+ }
+
+ #moreInfo:hover {
+     color: red;
+     text-shadow: none;
+ }
+
+ @media only screen and (max-width: 1085px) {
+  .logo {display: none;}
+  #adventure {display: none}
+  #moreInfo {display: inline-block;}
+}
