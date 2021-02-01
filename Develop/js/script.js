@@ -266,9 +266,9 @@ $("#mapBtn").on('click', function(){
                 console.log(data)
                 //clear directions list to prevent duplicates
                 var directionsList = $("#directionsList").empty()
-                for(var i=0; i < data.routes[0].guidance.instructions.length; i++){
+                for(var i=0; i < data.routes[0].guidance.instructionGroups.length; i++){
                     //create list item of each direction
-                    var direction = $("<li>").textContent = (i+1) + ") " + data.routes[0].guidance.instructions[i].message + '<br>'
+                    var direction = $("<li>").textContent = (i+1) + ") " + data.routes[0].guidance.instructionGroups[i].groupMessage + '<br>'
                     directionsList.append(direction)
                 }
                 
