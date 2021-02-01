@@ -258,6 +258,7 @@ $("#mapBtn").on('click', function(){
     var parkLat = stateParks[selectedPark].latitude;
     var parkLon = stateParks[selectedPark].longitude;
     
+    //directions api
     var apiUrl = "https://api.tomtom.com/routing/1/calculateRoute/" + userLat + "," + userLon + ":" + parkLat + "," + parkLon + "/json?instructionsType=text&language=en-US&vehicleHeading=90&sectionType=traffic&travelMode=car&vehicleMaxSpeed=120&key=XjgzSQAHv6Y5ZapTlCcMmnYfMz0ezyB1";
 
     fetch(apiUrl).then(function(response){
@@ -267,6 +268,7 @@ $("#mapBtn").on('click', function(){
                 //clear directions list to prevent duplicates
                 var directionsList = $("#directionsList").empty()
                 for(var i=0; i < data.routes[0].guidance.instructions.length; i++){
+                    //create list item of each direction
                     var direction = $("<li>").textContent = (i+1) + ") " + data.routes[0].guidance.instructions[i].message + '<br>'
                     directionsList.append(direction)
                 }
