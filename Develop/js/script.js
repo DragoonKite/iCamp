@@ -263,7 +263,6 @@ $("#mapBtn").on('click', function(){
     fetch(apiUrl).then(function(response){
         if(response.ok){
             response.json().then(function(data){
-                console.log(data)
                 //clear directions list to prevent duplicates
                 var directionsList = $("#directionsList").empty()
                 for(var i=0; i < data.routes[0].guidance.instructionGroups.length; i++){
