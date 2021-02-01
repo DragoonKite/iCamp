@@ -59,6 +59,7 @@
     font-weight: bold;
     border: solid 2px black;
     border-top: none;
+    min-height: 30px;
 }
 
 .list li:hover {
@@ -73,10 +74,6 @@
 .subtitle-top {
      text-align: center;
      font-size: 2em;
-}
-
-.btn1{
-    min-height: 30px;
 }
 
 .sienna {
@@ -181,16 +178,15 @@
  }
 
  #extras {
-     background-color: green;
      display: flex;
      justify-content: space-evenly;
-     padding: 2% 0;
+     padding: 2% 2%;
+     display: hidden;
  }
 
  .more {
      background-color: white;
      color: black;
-     font-weight: ;
  }
 
  #extraTitle {
@@ -199,13 +195,9 @@
      color: white;
  }
 
- /* #moreInfo {
-     font-size: 2rem;
-     padding-left: 50%;
+ #extrasContainer {
      display: none;
-     color: black;
-     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
- } */
+ }
 
  #moreInfo:hover {
      color: red;

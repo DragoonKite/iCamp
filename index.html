@@ -63,14 +63,54 @@
                          <!-- <button class="btn1" id="weatherSearchBtn">Display Weather</button> -->
 
                          <div id="weatherContainer"></div>
-                         <h1 id="extraTitle">But wait... There's more!</h1>
-                         <div id="extras">
-                              <button id="activities" class="btn1 ">Activities</button>
+                         <div id="extrasContainer">
+                              <h2 id="extraTitle">But wait... There's more!</h2>
+                              <div id="extras">
+                                   <div class = "container">                                     
+                                      <b>
+                                         <a class = "button modal-button btn1 more" data-target = "#activityModal">Activities</a>
+                                      </b>
+                                      <div id = "activityModal" class = "modal">
+                                         <div class = "modal-background"></div>
+                                         <div class = "modal-content">
+                                            <div class = "box">
+                                               <article class = "media">
+                                                  <div class = "media-content">
+                                                       <div class = "content">
+                                                       <a href="">experiment</a>
+                                                       </div>
+                                                  </div>
+                                               </article>
+                                            </div>
+                                         </div>
+                                         <button class = "modal-close is-large" aria-label = "close"></button>
+                                      </div>
+                                   </div>
+                                
+                                   <div class = "container">                                     
+                                      <b>
+                                         <a class = "button modal-button btn1 more" data-target = "#mapModal">  Map It  </a>
+                                      </b>
+                                      <div id = "mapModal" class = "modal">
+                                         <div class = "modal-background"></div>
+                                         <div class = "modal-content">
+                                            <div class = "box">
+                                               <article class = "media">
+                                                  <div class = "media-content">
+                                                       <div class = "content">
+                                                       <a href="">map here</a>
+                                                       </div>
+                                                  </div>
+                                               </article>
+                                            </div>
+                                         </div>
+                                         <button class = "modal-close is-large" aria-label = "close"></button>
+                                      </div>
+                                   </div>
+                                </div>
 
-                              <button id="mapIt" class="btn1">Map it!</button>
 
                          </div>
-                         
                     </div>
                </article>
           </div>
