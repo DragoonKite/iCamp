@@ -23,7 +23,7 @@ var getLocation = function(){
 
 //uses ip address to get physical location data
 var findLocation = function(){
-    var apiURL = "https://ip-api.com/json/" + userIP;
+    var apiURL = "http://ip-api.com/json/" + userIP;
     
     fetch(apiURL).then(function(response){
         if(response.ok){
@@ -35,7 +35,7 @@ var findLocation = function(){
         }
         else{
             //if api fecth fails, alert the user
-            //alert("Error: " + response.statusText)
+            alert("Error: " + response.statusText)
         };
     });
 };
@@ -90,7 +90,6 @@ var displayWeather = function(){
                 var wind = $("<div>").text("Wind Speed: " + data.current.wind_speed + " MPH").addClass('right-style');
                 var uvi = $("<div>").text("UV Index: " + data.current.uvi).addClass('right-style');
                 $("#weatherContainer").append(temp,hum,wind,uvi,$("<div>").text('4-Day Forecast').addClass('fourday'));
-                $("#extrasContainer").show();
                 $("#forestSide").addClass('right-side right-style')
 
 
@@ -122,17 +121,6 @@ var displayWeather = function(){
         };
     });
 };
-
-$(".more").click(function() {
-    var target = $(this).data("target");
-    $("html").addClass("is-clipped");
-    $(target).addClass("is-active");
- });
- 
- $(".modal-close").click(function() {
-    $("html").removeClass("is-clipped");
-    $(this).parent().removeClass("is-active");
- });
 
 //save up to last three searches
 var saveSearch = function(){
@@ -234,11 +222,12 @@ $("#parkList").on('click', 'li',  function(){
         //get selected park
         selectedPark = this.id
         displayWeather();
+        $("#extrasContainer").show();
     }
 });
 
 $("#moreInfoBtn").on('click', function(){
-    var activities = stateParks[selectedPark].activities;
+    
     var parkEmail = stateParks[selectedPark].contacts.emailAddresses[0].emailAddress;
     var parkPhone = stateParks[selectedPark].contacts.phoneNumbers[0].phoneNumber;
     var direcBlurb = stateParks[selectedPark].directionsInfo;
@@ -247,7 +236,62 @@ $("#moreInfoBtn").on('click', function(){
     var parkFees = stateParks[selectedPark].fees;
     var parkHours = stateParks[selectedPark].operatingHours[0].standardHours;
     var topics = stateParks[selectedPark].topics;
+    
 })
+
+$("#activityBtn").on('click', function(){
+    //pull activities from saved park data
+    var activities = stateParks[selectedPark].activities;
+    //clear list to prevent duplicate lists
+    var activitiesList = $("#activitiesList").empty();
+    for(var i=0; i<activities.length; i++){
+        //create list item with activity name
+        var activity = $("<li>").textContent = activities[i].name + '<br>';
+        console.log(activity);
+        activitiesList.append(activity)
+    };
+    console.log(activitiesList)
+});
+
+$("#mapBtn").on('click', function(){
+    //get park location
+    var parkLat = stateParks[selectedPark].latitude;
+    var parkLon = stateParks[selectedPark].longitude;
+    
+    var apiUrl = "https://api.tomtom.com/routing/1/calculateRoute/" + userLat + "," + userLon + ":" + parkLat + "," + parkLon + "/json?instructionsType=text&language=en-US&vehicleHeading=90&sectionType=traffic&travelMode=car&vehicleMaxSpeed=120&key=XjgzSQAHv6Y5ZapTlCcMmnYfMz0ezyB1";
+
+    fetch(apiUrl).then(function(response){
+        if(response.ok){
+            response.json().then(function(data){
+                console.log(data)
+                //clear directions list to prevent duplicates
+                var directionsList = $("#directionsList").empty()
+                for(var i=0; i < data.routes[0].guidance.instructions.length; i++){
+                    var direction = $("<li>").textContent = (i+1) + ") " + data.routes[0].guidance.instructions[i].message + '<br>'
+                    directionsList.append(direction)
+                }
+                
+            });
+        }
+        else{
+            //if api fetch fails, alert the user
+            alert("Error: " + response.statusText)
+        };
+    });
+});
+
+//modal section start
+$(".more").click(function() {
+    var target = $(this).data("target");
+    $("html").addClass("is-clipped");
+    $(target).addClass("is-active");
+ });
+ 
+ $(".modal-close").click(function() {
+    $("html").removeClass("is-clipped");
+    $(this).parent().removeClass("is-active");
+ });
+//modal section end
 
 loadSearchHistory();
 getLocation();

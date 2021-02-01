@@ -43,8 +43,7 @@
                     <button type="submit" class="btn1" id="stateSearchBtn">
                          Select the state you'd like to visit!
                     </button>
-                    <button id="moreInfoBtn">Testing</button>
-
+                    
                     <div class="tile is-child box sidebar" id="parkListContainer">
                          <p class="title" id='searchTitle'>National Parks</p>
                          <ul class="list" id ="parkList">
@@ -68,7 +67,7 @@
                               <div id="extras">
                                    <div class = "container">                                     
                                       <b>
-                                         <a class = "button modal-button btn1 more" data-target = "#activityModal">Activities</a>
+                                         <a class = "button modal-button btn1 more" data-target = "#activityModal" id="activityBtn">Activities</a>
                                       </b>
                                       <div id = "activityModal" class = "modal">
                                          <div class = "modal-background"></div>
@@ -77,7 +76,8 @@
                                                <article class = "media">
                                                   <div class = "media-content">
                                                        <div class = "content">
-                                                       <a href="">experiment</a>
+                                                            <h3>Activities</h3>
+                                                            <ul id ="activitiesList"></ul>
                                                        </div>
                                                   </div>
                                                </article>
@@ -89,7 +89,7 @@
                                 
                                    <div class = "container">                                     
                                       <b>
-                                         <a class = "button modal-button btn1 more" data-target = "#mapModal">  Map It  </a>
+                                         <a class = "button modal-button btn1 more" data-target = "#mapModal" id = "mapBtn">  Directions  </a>
                                       </b>
                                       <div id = "mapModal" class = "modal">
                                          <div class = "modal-background"></div>
@@ -98,7 +98,8 @@
                                                <article class = "media">
                                                   <div class = "media-content">
                                                        <div class = "content">
-                                                       <a href="">map here</a>
+                                                       <h3>Directions</h3>
+                                                       <ul id = 'directionsList'></ul>
                                                        </div>
                                                   </div>
                                                </article>
