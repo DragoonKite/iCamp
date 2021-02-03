@@ -36,8 +36,9 @@
           </div>
      </hero>
 
-     <div class="tile is-ancestor" id="mainCol">
-            <div class="tile is-half is-vertical is-parent column" id="section">
+     <main class="tile is-ancestor" id="mainCol">
+          <!-- left column -->
+            <section class="tile is-half is-vertical is-parent column" id="section">
                <div class="tile is-child  box sienna">
                     <input placeholder="Search by State" class="submit" type="text" id="stateSearchInput"></input>
                     <button type="submit" class="btn1" id="stateSearchBtn">
@@ -51,9 +52,9 @@
                          </ul>
                     </div>
                </div>
-            </div>
-
-          <div class="tile is-parent" style="padding: 0px">
+          </section>
+          <!-- right column -->
+          <section class="tile is-parent" style="padding: 0px">
                <article class="tile is-half is-child box sidebar" id="rightBar">
                     <div id="forestSide">
                          <p class="title" style="padding-left: 3px;">Choose a park. See the weather!</p>
@@ -114,8 +115,8 @@
                          </div>
                     </div>
                </article>
-          </div>
-        </div>
+          </section>
+     </main>
 
         <footer class="footer bottomPage">
             <div class="content has-text-centered">
