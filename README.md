@@ -26,7 +26,7 @@ As people plan their outdoor adventures they want to find new parks and what the
 * ip-api
 	
 ## Setup
-Visit: https://dragoonkite.github.io/project1
+Visit: https://dragoonkite.github.io/iCamp
 	
 ## Code Examples
 ```
