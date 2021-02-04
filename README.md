@@ -15,7 +15,7 @@
 As people plan their outdoor adventures they want to find new parks and what the weather will be.  This app will allow the user to find the answers to these questions in one spot!
 	
 ## Screenshots
-![Example screenshot](./Develop/images/icamp-gif.gif)
+![Example screenshot](./Develop/images/icamp-screenshot.png)
 
 ## Technologies
 * HTML5
