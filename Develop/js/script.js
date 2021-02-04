@@ -16,29 +16,28 @@ var stateCodes = {AL:'alabama', AK:'alaska', AZ:'arizona', AR:"arkansa", CA:'cal
 
 //gets the users ip then passes that data the findLocation function
 var getLocation = function(){
-    $.getJSON("https://api.ipify.org/?format=json", function(e) {
-        userIP = e.ip;
-    }).then(findLocation());
-};
-
-//uses ip address to get physical location data
-var findLocation = function(){
-    var apiURL = "http://ip-api.com/json/" + userIP;
-    
-    fetch(apiURL).then(function(response){
+    fetch("https://api.ipify.org/?format=json").then(function(response) {
         if(response.ok){
             response.json().then(function(data){
-                userState = data.region;
-                userLat = data.lat;
-                userLon = data.lon;
+                userIP = data.ip 
+
+                //uses ip address to get physical location data
+                return fetch("https://ipapi.co/" + userIP + "/json")
+            }).then(function(response){
+                if(response.ok){
+                    response.json().then(function(data){
+                        console.log(data)
+                        //save location data for future use
+                        userState = data.region;
+                        userLat = data.latitude;
+                        userLon = data.longitude;
+                    });
+                }
             });
         }
-        /* else{
-            //if api fecth fails, alert the user
-            alert("Error: " + response.statusText)
-        }; */
-    });
+    })
 };
+
 
 //get state parks in user's state
 var parksInState = function(state){
@@ -256,10 +255,11 @@ $("#mapBtn").on('click', function(){
     //get park location
     var parkLat = stateParks[selectedPark].latitude;
     var parkLon = stateParks[selectedPark].longitude;
-    
+
     //directions api
     var apiUrl = "https://api.tomtom.com/routing/1/calculateRoute/" + userLat + "," + userLon + ":" + parkLat + "," + parkLon + "/json?instructionsType=text&language=en-US&vehicleHeading=90&sectionType=traffic&travelMode=car&vehicleMaxSpeed=120&key=XjgzSQAHv6Y5ZapTlCcMmnYfMz0ezyB1";
 
+ 
     fetch(apiUrl).then(function(response){
         if(response.ok){
             response.json().then(function(data){
