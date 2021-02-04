@@ -22,7 +22,7 @@ var getLocation = function(){
                 userIP = data.ip 
 
                 //uses ip address to get physical location data
-                return fetch("http://api.ipstack.com/" + userIP + "?access_key=0176facef80e5f3c21f5d02f068d3338&output=json")
+                return fetch("https://ipapi.co/" + userIP + "/json")
             }).then(function(response){
                 if(response.ok){
                     response.json().then(function(data){
