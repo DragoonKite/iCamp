@@ -248,7 +248,6 @@ $("#activityBtn").on('click', function(){
         var activity = $("<li>").textContent = activities[i].name + '<br>';
         activitiesList.append(activity)
     };
-    console.log(activitiesList)
 });
 
 $("#mapBtn").on('click', function(){
