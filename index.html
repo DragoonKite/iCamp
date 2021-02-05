@@ -22,6 +22,7 @@
 
 
 <body>
+     <!-- Hero image / header -->
      <hero class="hero is-primary" id="header">
           <div class="hero-body" id="hero">
                <img class="logo" src="./Develop/images/tent-icon.png">
@@ -35,9 +36,11 @@
                </div>
           </div>
      </hero>
-
-     <div class="tile is-ancestor" id="mainCol">
-            <div class="tile is-half is-vertical is-parent column" id="section">
+     
+     <!-- main row containing left and right columns -->
+     <main class="tile is-ancestor" id="mainCol">
+          <!-- left column -->
+            <section class="tile is-half is-vertical is-parent column" id="section">
                <div class="tile is-child  box sienna">
                     <input placeholder="Search by State" class="submit" type="text" id="stateSearchInput"></input>
                     <button type="submit" class="btn1" id="stateSearchBtn">
@@ -51,9 +54,9 @@
                          </ul>
                     </div>
                </div>
-            </div>
-
-          <div class="tile is-parent" style="padding: 0px">
+          </section>
+          <!-- right column -->
+          <section class="tile is-parent" style="padding: 0px">
                <article class="tile is-half is-child box sidebar" id="rightBar">
                     <div id="forestSide">
                          <p class="title" style="padding-left: 3px;">Choose a park. See the weather!</p>
@@ -61,11 +64,15 @@
                          <input type="date" id='weatherDateMin' min = ""> -->
                          <!-- <button class="btn1" id="weatherSearchBtn">Display Weather</button> -->
 
+                         <!-- weather container shown when a park is chosen -->
                          <div id="weatherContainer"></div>
+
+                         <!-- activities and directions buttons and modals when clicked -->
                          <div id="extrasContainer">
                               <h2 id="extraTitle">But wait... There's more!</h2>
                               <div id="extras">
-                                   <div class = "container">                                     
+                                   <div class = "container">  
+                                        <!-- activites button -->
                                       <b>
                                          <a class = "button modal-button btn1 more" data-target = "#activityModal" id="activityBtn">Activities</a>
                                       </b>
@@ -87,7 +94,8 @@
                                       </div>
                                    </div>
                                 
-                                   <div class = "container">                                     
+                                   <div class = "container">
+                                        <!-- directions button -->
                                       <b>
                                          <a class = "button modal-button btn1 more" data-target = "#mapModal" id = "mapBtn">  Directions  </a>
                                       </b>
@@ -114,9 +122,10 @@
                          </div>
                     </div>
                </article>
-          </div>
-        </div>
+          </section>
+     </main>
 
+          <!-- footer with links to portfolios -->
         <footer class="footer bottomPage">
             <div class="content has-text-centered">
 
@@ -125,7 +134,7 @@
                 </h3>
 
                 <ul style="list-style: none; color: white; margin-left: 0px">
-                    <li><a href="https://rocketorangemen.github.io/Portfolio/"target="_blank">Ramon Flowers (Portfolio)</a> | <a href="https://dragoonkite.github.io/portfolio/"target="_blank">Frank Depaolo (Portfolio)</a> | <a href="https://blueink38.github.io/new-portfolio/">Jason Fletcher (Portfolio)</a> | <a href="https://erixflores.github.io/portfolio/"target="_blank">Erix Flores (GitHub)</a> | <a href="https://github.com/nvduran"target="_blank">Nick Duran (GitHub)</a></li>
+                    <li><a href="https://rocketorangemen.github.io/Portfolio/"target="_blank">Ramon Flowers (Portfolio)</a> | <a href="https://dragoonkite.github.io/portfolio/"target="_blank">Frank Depaolo (Portfolio)</a> | <a href="https://blueink38.github.io/new-portfolio/">Jason Fletcher (Portfolio)</a> | <a href="https://erixflores.github.io/portfolio/"target="_blank">Erix Flores (GitHub)</a> | <a href="https://nvduran.github.io/portfolio/"target="_blank">Nick Duran (Portfolio)</a></li>
                 </ul>
             </div>
         </footer>
