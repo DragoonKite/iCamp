@@ -1,18 +1,16 @@
-/* Body styling start */
+
 
 * {
     font-family: 'K2D', sans-serif;
 }
 
-/* Body styling End */
-
-/* Header styling start */
+/* iCamp logo */
 #camp {
     color: sienna;
     font-weight: bold;
     text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
-
+/* search button styling */
 #stateSearchBtn {
     border-radius: 7px;
     padding: 0;
@@ -21,7 +19,7 @@
 .intro {
     font-size: 4rem;
 }
-
+/* hero section styling */
 #hero {
     background-image: linear-gradient(to bottom right,rgb(168, 117, 23), rgb(0, 100, 0), rgb(168, 117, 23));
     padding: 10px;
@@ -32,18 +30,18 @@
 .bulma {
     margin-left: 20px;
 }
-
+/* left and right column styling */
 .sidebar {
     background-color: tan;
     border-radius: 7px;
     border: solid 2px black;
     border-top: none;
 }
-
+/* left column button styling */
 #section {
     padding: 12px 2px 0 0;
 }
-
+/* button styling */
 .submit {
     width: 100%;
     padding: 10px 0;
@@ -52,7 +50,7 @@
     text-align: center;
     border-radius: 7px;
 }
-
+/* button styling */
 .btn1 {
     width: 100%;
     padding-top: 5px;
@@ -61,21 +59,21 @@
     border-top: none;
     min-height: 30px;
 }
-
+/* state park list hover */
 .list li:hover {
     font-weight: bold;
 }
-
+/* banner title styling */
 .title-top {
      font-size: 5em;
      text-align: center; 
 }
-
+/* banner subtitle styling */
 .subtitle-top {
      text-align: center;
      font-size: 2em;
 }
-
+/* state selection styling */
 .sienna {
 
     border-radius: 0;
@@ -84,34 +82,34 @@
     background-size: 100% 100%;
     /* min-height: 10rem; */
 }
-
+/* park list styling */
 #parkListContainer {
     display: none;
     opacity: 90%;
 }
-
+/* hide weather until park selected */
 #weatherDateMax, 
 #weatherDateMin, 
 #weatherSearchBtn {
     display: none;
 }
-
+/* weather text white */
 #rightBar p {
      color: white;    
 }
-
+/* weather area styling */
 .right-side {
     background-color: rgb(168, 159, 159);
     opacity: 90%;
     border-radius: 5px;
 }
-
+/* weather area styling */
 .right-style {
     font-weight: bold;
     color: navy;
     padding-left: 3px;
 }
-
+/* weather container default background */
 #rightBar {
      min-height: 635px;
      border-radius: 0;
@@ -119,48 +117,44 @@
      background-repeat: no-repeat;
      background-size: 100% 100%;
  }
-
- #doggo {
-      display: none; 
- }
-
+/* main column */
  .is-ancestor {
      height: 100%
  }
-
+/* main column */
  .mainCol {
       height: 100%
  }
-
+/* footer styling */
  .bottomPage {
      background-color: black;
      color: white;
      padding: 50px;
  }
-
+/* footer text color */
  .bottomPage a {
      color: orange;
  }
-
+/* footer hover styling */
  .bottomPage a:hover {
      font-weight: bold;
      color: green;
  }
-
+/* weather text color */
  #weatherContainer {
       color: white;
  }
-
+/* weather alignment */
  #weatherCardHolder {
     text-align: center;
  }
-
+/* forecast styling */
  .fourday {
     text-align: center;
     font-size: 1.4rem;
     font-weight: none;
  }
-
+/* logo styling */
  .logo {
     width: 70px;
     height: 70px;
@@ -176,34 +170,34 @@
     text-align: center;
     /* position: relative; */
  }
-
+/* activites and direction buttons */
  #extras {
      display: flex;
      justify-content: space-evenly;
      padding: 2% 2%;
      display: hidden;
  }
-
+/* modal styling */
  .more {
      background-color: white;
      color: black;
  }
-
+/* "but wait there's more" styling */
  #extraTitle {
      text-align: center;
      font-size: 1.5rem;
      color: white;
  }
-
+/* hides extra buttons */
  #extrasContainer {
      display: none;
  }
-
+/* more info button hover styling */
  #moreInfo:hover {
      color: red;
      text-shadow: none;
  }
-
+/* sizing */
  @media only screen and (max-width: 1085px) {
   .logo {display: none;}
   #adventure {display: none}
